@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="384dp"
+        android:layout_height="50dp"
+        android:background="@color/colorRB"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/clouditem_iv_detail_arrow"
+            android:layout_width="61dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="20dp"
+            android:paddingRight="25dp"
+            android:paddingTop="20dp"
+            android:src="@mipmap/arrow"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/detail_xibaobianhao"
+        android:layout_width="286dp"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="4dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:background="@drawable/cloud_line_xibaobianhao"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="98dp"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="@string/xibaobianhao"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:background="@drawable/cloud_line_xibaobianhao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+    <TextView
+        android:id="@+id/cloueitem_xibaomingcheng"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/xibaomingcheng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+
+
+    <TextView
+        android:id="@+id/clouditem_chuandaishijian"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_chuandaishijian"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_daici"/>
+
+    <TextView
+        android:id="@+id/clouditem_peiyangshijian"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_xibaopeiyangshijian"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_chuandaishijian"/>
+
+    <TextView
+        android:id="@+id/clouditem_xibaoshuliang"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_xibaoshuliang"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_huanyeshijian"/>
+
+    <TextView
+        android:id="@+id/clouditem_chuandaibili"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_chuandaibili"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_fugalv"/>
+
+    <TextView
+        android:id="@+id/clouditem_fugalv"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_fugailv"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_xibaoshuliang"/>
+
+    <TextView
+        android:id="@+id/clouditem_beizhu"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_beizhu"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_chuandaibili"/>
+
+    <TextView
+        android:id="@+id/clouditem_huanyeshijian"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_xibaohuanyeshijian"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_peiyangshijian"/>
+
+    <TextView
+        android:id="@+id/clouditem_daici"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_daici"
+        app:layout_constraintTop_toBottomOf="@+id/clouditem_pihao"/>
+
+    <TextView
+        android:id="@+id/clouditem_pihao"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_pihao"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_xibaomingcheng3"/>
+
+    <TextView
+        android:id="@+id/cloueitem_xibaomingcheng3"
+        style="@style/CloudItemDetail"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cloueitem_xibaomingcheng"
+        app:layout_constraintTop_toBottomOf="@+id/detail_xibaobianhao"/>
+
+    <TextView
+        android:id="@+id/cloueitem_pihao"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/cloudpihao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_xibaomingcheng"/>
+
+    <TextView
+        android:id="@+id/cloueitem_daici"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/clouddaici"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_pihao"/>
+
+    <TextView
+        android:id="@+id/cloueitem_chuandaishijian"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/cloudchuandaishijian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_daici"/>
+
+    <TextView
+        android:id="@+id/cloueitem_xibaohuanyeshijian"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/cloudhuanyeshijian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_xibaopeiyangshijian"/>
+
+    <TextView
+        android:id="@+id/cloueitem_xibaopeiyangshijian"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/peiyangshijian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_chuandaishijian"/>
+
+    <TextView
+        android:id="@+id/cloueitem_xibaoshuliang"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/xibaoshuliang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_xibaohuanyeshijian"/>
+
+    <TextView
+        android:id="@+id/cloueitem_fugailv"
+        style="@style/CloudItemDetail"
+        android:layout_height="18dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/fugailv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_xibaoshuliang"/>
+
+    <TextView
+        android:id="@+id/cloueitem_chuandaibili"
+        style="@style/CloudItemDetail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/chuandaibili"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_fugailv"/>
+
+    <TextView
+        android:id="@+id/cloueitem_beizhu"
+        style="@style/CloudItemDetail"
+        android:layout_height="18dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/beizhu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_chuandaibili"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="247dp"
+        android:layout_marginTop="8dp"
+        android:padding="5dp"
+        android:background="@color/colorBrightGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cloueitem_beizhu">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</android.support.constraint.ConstraintLayout>

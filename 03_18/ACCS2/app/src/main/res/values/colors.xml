@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="main_login_button_color">#1a315c</color>
+    <color name="colorBlack">#000000</color>
+    <color name="main_login_button_unclick_color">#2d5090</color>
+    <color name="colorRB">#528bc3</color>
+    <color name="colorRBU">#a6a6a6</color>
+    <color name="colorCloudItemDetail">#757575</color>
+    <color name="colorBrightGray">#22000000</color>
+    <color name="colorBBrightGray">#F5F5F5</color>
+    <color name="colorWhitegGray">#F8F8FF</color>
+    <color name="colorNavigation">#fcfcfc</color>
+    <color name="colorSet">#3cddff</color>
+    <color name="colorCur">#3cddff</color>
+    <color name="colorHumanity">#00cf3a</color>
+    <color name="colorProgressBarTextColor">#528bc3</color>
+
+
+    <color name="clickMainColor">#FF83AAB9</color>
+    <color name="progress_gray">#f6f6f6</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="progress_start">#f1e134</color>
+    <color name="progress_end">#f14a34</color>
+
+
+
+</resources>

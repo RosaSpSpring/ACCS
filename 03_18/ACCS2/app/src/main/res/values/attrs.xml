@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--RoundProgressBar-->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="circleColor" format="color"/>
+        <attr name="progressCircleColor" format="color"/>
+        <attr name="circleThickness" format="dimension"/>
+        <attr name="topTextColor" format="color"/>
+        <attr name="secondTextColor" format="color"/>
+        <attr name="thirdTextColor" format="color"/>
+        <attr name="maxProgress" format="integer"/>
+        <attr name="animationDuration" format="integer"/>
+        <attr name="topText" format="string"/>
+        <attr name="thirdText" format="string"/>
+        <attr name="topTextSize" format="dimension"/>
+        <attr name="secondTextSize" format="dimension"/>
+        <attr name="thirdTextSize" format="dimension"/>
+        <attr name="progressStartColor" format="color"/>
+        <attr name="progressEndColor" format="color"/>
+        <attr name="progressArgbColor" format="boolean"/>
+        <attr name="smallCircleColor" format="color"/>
+        <attr name="smallCircleEnable" format="boolean"/>
+    </declare-styleable>
+</resources>

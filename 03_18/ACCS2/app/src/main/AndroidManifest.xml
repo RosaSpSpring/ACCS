@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.ko.accs2">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="28"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 允许定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    !-- 允许程序获取Wifi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 允许程序使用设备的camera -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 允许程序获得设备信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" android:screenOrientation="portrait">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".LaunchActivity"  android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" android:theme="@style/Mmy.Theme.AppCompat.NoActionBar" android:screenOrientation="portrait">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".cloud.CloudItem" android:screenOrientation="portrait"/>
+        <activity android:name=".cloud.CloudItemDetail" android:theme="@style/Mmy.Theme.AppCompat.NoActionBar"  android:parentActivityName=".cloud.CloudItem" android:screenOrientation="portrait"/>
+        <activity android:name=".cloud.ImageActivity" android:screenOrientation="portrait" android:theme="@style/Mmy.Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".user.UserSetting" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".user.BoundedDevices" android:screenOrientation="portrait"  android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".netyy.LiveActivity" android:configChanges="screenSize|keyboardHidden|orientation" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation = "landscape" />
+        <activity android:name=".user.ChangeAccount" android:configChanges="screenSize|keyboardHidden|orientation"  android:screenOrientation = "portrait" />
+    </application>
+
+</manifest>

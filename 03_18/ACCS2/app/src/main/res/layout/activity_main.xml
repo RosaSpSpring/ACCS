@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!--标题栏-->
+    <include layout="@layout/title_bar"/>
+    <!--帧布局-->
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorRBU"
+        >
+
+    </LinearLayout>
+
+    <!--底部菜单栏-->
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="57dp">
+
+
+        <RadioButton
+            android:id="@+id/rb_1"
+            android:text="@string/title_home"
+            android:drawableTop="@drawable/main_cloud_selector"
+
+            style="@style/RadioGroup"/>
+
+        <RadioButton
+            android:id="@+id/rb_2"
+            android:text="@string/title_dashboard"
+            android:drawableTop="@drawable/main_remote_selector"
+            style="@style/RadioGroup"/>
+
+
+        <RadioButton
+            android:id="@+id/rb_3"
+            android:text="@string/title_notifications"
+            android:drawableTop="@drawable/main_user_selector"
+            style="@style/RadioGroup"/>
+
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,67 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/main_bg"
     tools:layout_editor_absoluteY="25dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"/>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:background="@mipmap/logo_bt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:padding="1dp"
+        android:src="@mipmap/logo_bt"
+        />
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="187dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@mipmap/main_clouddata"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:padding="1dp"
+        android:src="@mipmap/main_clouddata"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <EditText
         android:id="@+id/et_user"
-        android:layout_width="256.66dp"
-        android:layout_height="51.66dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="110dp"
+        android:layout_width="259dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:drawableLeft="@mipmap/main_user"
         android:drawablePadding="35dp"
         android:inputType="text"
-        android:text=""
         android:maxLength="20"
         android:maxLines="1"
         android:paddingLeft="15dp"
+        android:text=""
         android:textColor="@color/colorBlack"
         android:textSize="14sp"
         android:theme="@style/MyEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+        />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="256.66dp"
-        android:layout_height="51.66dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:drawableLeft="@mipmap/main_password"
         android:drawablePadding="35dp"
         android:inputType="text|textPassword"
@@ -72,22 +67,23 @@
         android:textColor="@color/colorBlack"
         android:textSize="14sp"
         android:theme="@style/MyEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_user"/>
-
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
     <Button
         android:id="@+id/main_login"
-        android:layout_width="166.66dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:background="@drawable/main_login_btn_selector"
+        android:padding="1dp"
         android:text="登录"
         android:textColor="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password"/>
-</android.support.constraint.ConstraintLayout>
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.4"/>
+</LinearLayout>

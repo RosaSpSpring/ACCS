@@ -1,235 +1,413 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:layout_editor_absoluteY="25dp">
 
-
-    <Button
-        android:id="@+id/btn_clear_huanyeshijian"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/ic_menu_close_clear_cancel"
-        app:layout_constraintBottom_toBottomOf="@+id/cloud_huanyeshijian_tv"
-        app:layout_constraintEnd_toEndOf="@+id/cloud_huanyeshijian_tv"
-        app:layout_constraintTop_toTopOf="@+id/cloud_huanyeshijian_tv"
-        app:layout_constraintVertical_bias="1.0"/>
-
-    <Button
-        android:id="@+id/btn_clear_chuandaishijian"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="17dp"
-        android:background="@android:drawable/ic_menu_close_clear_cancel"
-        app:layout_constraintBottom_toBottomOf="@+id/cloud_chuandaishijian_tv"
-        app:layout_constraintEnd_toEndOf="@+id/cloud_chuandaishijian_tv"
-        app:layout_constraintTop_toTopOf="@+id/cloud_chuandaishijian_tv"
-        app:layout_constraintVertical_bias="0.727"/>
-
-    <EditText
-        android:id="@+id/cloud_cellname_et"
-        style="@style/CloudStyle"
-        android:layout_width="238dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_marginTop="32dp"
-        android:background="@drawable/cloud_rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
-    <EditText
-        android:id="@+id/cloud_pihao_et"
-        style="@style/CloudStyle"
-        android:layout_width="87dp"
-        android:layout_height="31dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/cloud_rectangle"
-        app:layout_constraintStart_toEndOf="@+id/cloud_pihao"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_xibaobianhao"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
-    <TextView
-        android:id="@+id/cloud_huanyeshijian_tv"
-        android:layout_width="238dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/cloud_rectangle"
-        android:paddingStart="10dp"
-        android:paddingTop="5dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_chuandaishijian_tv"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
 
-    <TextView
-        android:id="@+id/cloud_chuandaishijian_tv"
-        android:layout_width="238dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/cloud_rectangle"
-        android:paddingStart="10dp"
-        android:paddingTop="5dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_peiyangshijian_tv"/>
+            <TextView
+                android:id="@+id/cloud_cellname2"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="@string/xibaomingcheng"
+                />
 
-    <TextView
-        android:id="@+id/cloud_peiyangshijian_tv"
-        android:layout_width="238dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/cloud_rectangle"
-        android:paddingStart="10dp"
-        android:paddingTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_daici_et"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
-    <EditText
-        android:id="@+id/cloud_xibaobianhao_et"
-        style="@style/CloudStyle"
-        android:layout_width="238dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/cloud_rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_cellname_et"/>
+            <EditText
+                android:id="@+id/cloud_cellname_et"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cloud_rectangle"
+                />
 
-    <EditText
-        android:id="@+id/cloud_daici_et"
-        style="@style/CloudStyle"
-        android:layout_width="87dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/cloud_rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_xibaobianhao_et"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/cloud_pihao"
-        style="@style/CloudStyle"
-        android:layout_width="48dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/cloudpihao"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_xibaobianhao"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
-    <TextView
-        android:id="@+id/cloud_daici"
-        style="@style/CloudStyle"
-        android:layout_width="48dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/clouddaici"
-        app:layout_constraintEnd_toStartOf="@+id/cloud_daici_et"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_xibaobianhao_et"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
 
-    <TextView
-        android:id="@+id/cloud_huanyeshijian"
-        style="@style/CloudStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
+            <TextView
+                android:id="@+id/cloud_xibaobianhao"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="@string/xibaobianhao"
+                />
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/cloudhuanyeshijian"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_chuandaishijian"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
-    <TextView
-        android:id="@+id/cloud_chuandaishijian"
-        style="@style/CloudStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/cloudchuandaishijian"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_peiyangshijian"/>
+            <EditText
+                android:id="@+id/cloud_xibaobianhao_et"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="@drawable/cloud_rectangle"
+                />
 
-    <TextView
-        android:id="@+id/cloud_peiyangshijian"
-        style="@style/CloudStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/cloudpeiyangshijian"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_pihao"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/cloud_xibaobianhao"
-        style="@style/CloudStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/xibaobianhao"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_cellname2"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/cloud_cellname2"
-        style="@style/CloudStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/xibaomingcheng"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:layout_width="0dp"
 
-    <Button
-        android:id="@+id/cloud_btn_search"
-        android:layout_width="316.66dp"
-        android:layout_height="45.33dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/cloud_btn_search_selector"
-        android:text="@string/cloudbuttonjainsuo"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloud_huanyeshijian_tv"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"/>
+                <TextView
+                    android:id="@+id/cloud_pihao"
+                    style="@style/CloudStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cloudpihao"
+                    />
+                <TextView
+                    android:layout_width="0dp"
 
-    <Button
-        android:id="@+id/btn_clear_peiyangshijian"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/ic_menu_close_clear_cancel"
-        app:layout_constraintBottom_toBottomOf="@+id/cloud_peiyangshijian_tv"
-        app:layout_constraintEnd_toEndOf="@+id/cloud_peiyangshijian_tv"
-        app:layout_constraintTop_toTopOf="@+id/cloud_peiyangshijian_tv"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"/>
+
+                <EditText
+                    android:id="@+id/cloud_pihao_et"
+                    style="@style/CloudStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/cloud_rectangle"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/cloud_daici"
+                    style="@style/CloudStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/clouddaici"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"/>
+
+                <EditText
+                    android:id="@+id/cloud_daici_et"
+                    style="@style/CloudStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+
+                    android:background="@drawable/cloud_rectangle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cloud_xibaobianhao_et"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/cloud_peiyangshijian"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/cloudpeiyangshijian"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cloud_pihao"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5">
+                <TextView
+                    android:id="@+id/cloud_peiyangshijian_tv"
+                    style="@style/CloudStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cloud_rectangle"
+                    />
+
+                <Button
+                    android:id="@+id/btn_clear_peiyangshijian"
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@android:drawable/ic_menu_close_clear_cancel"
+                    app:layout_constraintBottom_toBottomOf="@+id/cloud_peiyangshijian_tv"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/cloud_peiyangshijian_tv"
+                    app:layout_constraintTop_toTopOf="@+id/cloud_peiyangshijian_tv"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/cloud_chuandaishijian"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/cloudchuandaishijian"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5">
+                <TextView
+                    android:id="@+id/cloud_chuandaishijian_tv"
+                    style="@style/CloudStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cloud_rectangle"
+                    android:text=""
+                    />
 
 
-</android.support.constraint.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_clear_chuandaishijian"
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@android:drawable/ic_menu_close_clear_cancel"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintBottom_toBottomOf="@+id/cloud_chuandaishijian_tv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/cloud_chuandaishijian_tv"
+                    app:layout_constraintTop_toTopOf="@+id/cloud_chuandaishijian_tv"
+                    />
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+            <TextView
+                android:id="@+id/cloud_huanyeshijian"
+                style="@style/CloudStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/cloudhuanyeshijian"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cloud_chuandaishijian"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5">
+                <TextView
+                    android:id="@+id/cloud_huanyeshijian_tv"
+                    style="@style/CloudStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cloud_rectangle"
+                    android:text=""
+                    />
+                <Button
+                    android:id="@+id/btn_clear_huanyeshijian"
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintVertical_bias="0.5"
+                    android:background="@android:drawable/ic_menu_close_clear_cancel"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/cloud_huanyeshijian_tv"
+                    app:layout_constraintEnd_toEndOf="@+id/cloud_huanyeshijian_tv"
+                    app:layout_constraintTop_toTopOf="@+id/cloud_huanyeshijian_tv"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"/>
+            <Button
+                android:id="@+id/cloud_btn_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/cloud_btn_search_selector"
+                android:text="@string/cloudbuttonjainsuo"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

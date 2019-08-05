@@ -797,10 +797,7 @@ public class Remote extends BaseFragment {
 			case R.id.myvideo:
 				break;
 			case R.id.video_back:
-
-
 				mHandler.sendEmptyMessageDelayed( HIDE_REMOTE_MEDIACONTROLLER, 5000 );
-
 				break;
 			case R.id.video_name:
 				break;

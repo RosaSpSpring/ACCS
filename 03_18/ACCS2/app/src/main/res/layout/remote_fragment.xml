@@ -9,176 +9,262 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#000000"
-        >
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#000000"
             android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
             >
 
             <VideoView
                 android:id="@+id/myvideo"
-                android:layout_centerInParent="true"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"/>
+
             <include layout="@layout/media_controller"/>
 
         </RelativeLayout>
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:background="#f5f5f5"/>
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="#f5f5f5"/>
 
-        <TextView
-            android:layout_width="6dp"
-            android:layout_height="16dp"
-            android:layout_marginLeft="10dp"
-            android:background="#80b2e4"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="培养箱参数"
-            android:textColor="#528bc3"
-            android:textSize="16sp"/>
+            <TextView
+                android:layout_width="6dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="10dp"
+                android:background="#80b2e4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="培养箱参数"
+                android:textColor="#528bc3"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/colorRBU">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <com.ko.accs2.remote.RoundProgressBar
+                        android:id="@+id/tem_set_pb"
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="4"/>
+
+                    <TextView
+                        android:id="@+id/tem_set"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="1dp"
+                        android:text="温度设定值"
+                        android:textColor="#8d8d8c"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <com.ko.accs2.remote.RoundProgressBar
+                        android:id="@+id/tem_cur_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                           android:layout_margin="10dp"
+                        android:layout_weight="4"/>
+
+                    <TextView
+                        android:id="@+id/tem_cur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="温度当前值"
+                        android:textColor="#8d8d8c"
+                        android:textSize="12sp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="4"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="#8d8d8c"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginBottom="0.1dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <com.ko.accs2.remote.RoundProgressBar
+                        android:id="@+id/co2_set_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="4"/>
+
+                    <TextView
+                        android:id="@+id/co2_set"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="CO2设定值"
+                        android:textColor="#8d8d8c"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.ko.accs2.remote.RoundProgressBar
+                        android:id="@+id/co2_cur_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="4"/>
+
+                    <TextView
+                        android:id="@+id/co2_set2"
+                        android:text="CO₂当前值"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#8d8d8c"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.ko.accs2.remote.RoundProgressBar
+                        android:id="@+id/shidu_ratio"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="4"/>
+
+                    <TextView
+                        android:id="@+id/co2_set4"
+                        android:text="湿度百分比"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#8d8d8c"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/colorRBU">
-
-    </LinearLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.ko.accs2.remote.RoundProgressBar
-            android:id="@+id/tem_cur_pb"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toEndOf="@+id/tem_set_pb"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <com.ko.accs2.remote.RoundProgressBar
-            android:id="@+id/tem_set_pb"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <com.ko.accs2.remote.RoundProgressBar
-            android:id="@+id/co2_cur_pb"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@+id/co2_set_pb"
-            app:layout_constraintTop_toBottomOf="@+id/tem_cur"/>
-
-        <com.ko.accs2.remote.RoundProgressBar
-            android:id="@+id/shidu_ratio"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="146dp"
-            app:layout_constraintStart_toEndOf="@+id/co2_cur_pb"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <com.ko.accs2.remote.RoundProgressBar
-            android:id="@+id/co2_set_pb"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tem_set"/>
-
-        <TextView
-            android:id="@+id/tem_set"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="12dp"
-            android:padding="1dp"
-            android:text="温度设定值"
-            android:textColor="#8d8d8c"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tem_set_pb"/>
-
-        <TextView
-            android:id="@+id/tem_cur"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="12dp"
-            android:padding="1dp"
-            android:text="温度当前值"
-            android:textColor="#8d8d8c"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/tem_set"
-            app:layout_constraintTop_toBottomOf="@+id/tem_cur_pb"/>
-
-        <TextView
-            android:id="@+id/co2_set"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="12dp"
-            android:padding="1dp"
-            android:text="CO₂设定值"
-            android:textColor="#8d8d8c"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/co2_set_pb"/>
-
-        <TextView
-            android:id="@+id/co2_set2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="12dp"
-            android:padding="1dp"
-            android:text="CO₂当前值"
-            android:textColor="#8d8d8c"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/co2_set"
-            app:layout_constraintTop_toBottomOf="@+id/co2_cur_pb"/>
-
-        <TextView
-            android:id="@+id/co2_set4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="12dp"
-            android:padding="1dp"
-            android:text="湿度百分比"
-            android:textColor="#8d8d8c"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/co2_set2"
-            app:layout_constraintTop_toBottomOf="@+id/shidu_ratio"/>
-
-
-    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

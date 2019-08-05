@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.githang.statusbar.StatusBarCompat;
+import com.ko.accs2.Screen.ScreenAdapterUtils;
 import com.ko.accs2.base.BaseFragment;
 import com.ko.accs2.fragment.CloudData;
 import com.ko.accs2.fragment.Remote;
@@ -70,6 +71,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ScreenAdapterUtils.setCusomDensity( this, getApplication());
         setContentView(R.layout.activity_main);
         //设置状态栏的颜色
         StatusBarCompat.setStatusBarColor(MainActivity.this,MainActivity.this.getResources().getColor(R.color.colorRB),false);

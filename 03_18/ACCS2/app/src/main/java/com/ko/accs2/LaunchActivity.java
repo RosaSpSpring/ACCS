@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.weeboos.permissionlib.PermissionRequest;
+import com.ko.accs2.Screen.ScreenAdapterUtils;
 import com.ko.accs2.guide.CustomVideoView;
 
 import java.io.BufferedOutputStream;
@@ -58,6 +59,7 @@ public class LaunchActivity extends AppCompatActivity {
 		getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN );//隐藏状态栏
 
 
+		ScreenAdapterUtils.setCusomDensity( this, getApplication());
 		setContentView( R.layout.activity_lanuch );
 		getWindow().setFormat( PixelFormat.TRANSLUCENT );
 		videoView = findViewById( R.id.video_view );

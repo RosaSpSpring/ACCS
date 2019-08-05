@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.ko.accs2.Screen.ScreenAdapterUtils;
 import com.ko.accs2.bean.MyEventBus;
 import com.ko.accs2.bean.UserBean;
 import com.ko.accs2.bean.Userbeans;
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
+		ScreenAdapterUtils.setCusomDensity( this, getApplication());
 		setContentView( R.layout.login_activity );
 		ButterKnife.bind( this );
 
@@ -68,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 		mMainLogin = findViewById(R.id.main_login);
 
 //		Log.e(TAG, "tvp2" + tvpassword+tvusername);
-		EventBus.getDefault().post( new MyEventBus( "hello" ) );
+		EventBus.getDefault().post( new MyEventBus( "hello" ));
 		mMainLogin.setOnClickListener( new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -77,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
 				tvusername =  mEtUser.getText().toString().trim();
 				tvpassword =  mEtPassword.getText().toString().trim();
 //				Log.e(TAG, "tvp0" + tvpassword+tvusername);
-
 				doLogin();
 
 			}

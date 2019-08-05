@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.bruce.pickerview.popwindow.DatePickerPopWin;
 import com.ko.accs2.R;
+import com.ko.accs2.Screen.ScreenAdapterUtils;
 import com.ko.accs2.base.BaseFragment;
 import com.ko.accs2.cloud.CloudItem;
 

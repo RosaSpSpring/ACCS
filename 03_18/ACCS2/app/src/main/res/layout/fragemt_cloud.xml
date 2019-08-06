@@ -36,10 +36,6 @@
                 android:text="@string/xibaomingcheng"
                 />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
 
             <EditText
                 android:id="@+id/cloud_cellname_et"
@@ -77,10 +73,6 @@
                 android:text="@string/xibaobianhao"
                 />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
 
             <EditText
                 android:id="@+id/cloud_xibaobianhao_et"
@@ -137,11 +129,7 @@
                     android:layout_weight="1.5"
                     android:background="@drawable/cloud_rectangle"
                     />
-                <TextView
-                    android:layout_width="0dp"
 
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -208,10 +196,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cloud_pihao"/>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="0dp"
@@ -266,10 +250,7 @@
                 android:text="@string/cloudchuandaishijian"
                 />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="0dp"
@@ -327,10 +308,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cloud_chuandaishijian"/>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="0dp"

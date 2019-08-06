@@ -28,13 +28,7 @@ import java.math.BigDecimal;
 import static android.graphics.Paint.Style.STROKE;
 
 
-/**
- * @author Admin
- * @version $Rev$
- * @des ${TODO}
- * @updateAuthor $Author$
- * @updateDes ${TODO}
- */
+
 
 public class RoundProgressBar extends View {
 
@@ -282,7 +276,7 @@ public class RoundProgressBar extends View {
 
 		RectF oval2 = new RectF( center - outerFirstCircleRadius, center - outerFirstCircleRadius, center + outerFirstCircleRadius, center + outerFirstCircleRadius );  //用于定义的圆弧的形状和大小的界限
 
-		double progress;
+		float progress;
 
 		//这里画圆环的时候第二个参数为开始角度，0表示右边中线，90表示底部，-outerFirstCircleRadius
 		if (currentProgress < maxProgress) {
@@ -293,6 +287,9 @@ public class RoundProgressBar extends View {
 			drawArcByColor( canvas, oval2, progress );
 		}
 	}
+
+
+
 
 	/**
 	 * 根据颜色来画圆弧
@@ -371,6 +368,19 @@ public class RoundProgressBar extends View {
 		} else if (currentProgress <= maxProgress) {
 			this.currentProgress = currentProgress;
 		}
+
+	}
+	/**
+	 * 设置填入格式
+	 *
+	 */
+	public void setNumberFormat(String mCProgress){
+
+
+	}
+
+
+	public void setProgressNumberFormat(){
 
 	}
 

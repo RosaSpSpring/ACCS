@@ -57,7 +57,7 @@
         <TextView
             android:id="@+id/cloueitem_tupian"
             style="@style/CloudItem"
-            android:text="图      片"/>
+            android:text="图片"/>
     </LinearLayout>
     <LinearLayout
         android:background="#dfdfdf"

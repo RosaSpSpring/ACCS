@@ -8,7 +8,7 @@
         <attr name="topTextColor" format="color"/>
         <attr name="secondTextColor" format="color"/>
         <attr name="thirdTextColor" format="color"/>
-        <attr name="maxProgress" format="integer"/>
+        <attr name="maxProgress" format="float"/>
         <attr name="animationDuration" format="integer"/>
         <attr name="topText" format="string"/>
         <attr name="thirdText" format="string"/>

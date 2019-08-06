@@ -71,11 +71,11 @@ public class User extends BaseFragment implements View.OnClickListener {
 		getResponse();
 		String code = CacheUtils.getString( mContext, "LoginActivitycode" );
 		Log.e( TAG, "code" + code );
-		if (code == "200") {
-			mUserDeviceStatus.setText( "当前设备在线中");
-		} else {
-			mUserDeviceStatus.setText( "当前设备离线" );
-		}
+//		if (code == "200") {
+//			mUserDeviceStatus.setText( "当前设备在线中");
+//		} else {
+//			mUserDeviceStatus.setText( "当前设备离线" );
+//		}
 
 		return rootView;
 	}
@@ -85,7 +85,8 @@ public class User extends BaseFragment implements View.OnClickListener {
 		//几号设备
 		String response = CacheUtils.getString( mContext, "BoundedDevice2" );
 		if (response != null) {
-			mDceviceShow.setText( response );
+//			mDceviceShow.setText( response );
+			mDceviceShow.setText( "response" );
 		}
 
 	}

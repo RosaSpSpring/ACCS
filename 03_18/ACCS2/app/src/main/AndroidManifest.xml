@@ -58,7 +58,7 @@
         <activity android:name=".user.UserSetting" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".user.BoundedDevices" android:screenOrientation="portrait"  android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".netyy.LiveActivity" android:configChanges="screenSize|keyboardHidden|orientation" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation = "landscape" />
-        <activity android:name=".user.ChangeAccount" android:configChanges="screenSize|keyboardHidden|orientation"  android:screenOrientation = "portrait" />
+        <activity android:name=".user.ChangeAccount" android:configChanges="screenSize|keyboardHidden|orientation"  android:screenOrientation = "portrait" android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

@@ -417,13 +417,13 @@ public class Remote extends BaseFragment {
 		mTemSetPb.setProgressCircleColor( getResources().getColor( R.color.colorSet ) );
 
 		mTemCurPb.setThirdText( "℃" );
-		mTemCurPb.setCurrentProgress( 0 );
+		mTemCurPb.setCurrentProgress(  0 );
 		mTemCurPb.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mTemCurPb.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mTemCurPb.setProgressCircleColor( getResources().getColor( R.color.colorCur ) );
 
 		mCo2SetPb.setThirdText( "%" );
-		mCo2SetPb.setCurrentProgress( 0 );
+		mCo2SetPb.setCurrentProgress(  0);
 		mCo2SetPb.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2SetPb.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2SetPb.setProgressCircleColor( getResources().getColor( R.color.colorSet ) );
@@ -435,10 +435,17 @@ public class Remote extends BaseFragment {
 		mCo2CurPb.setProgressCircleColor( getResources().getColor( R.color.colorCur ) );
 
 		mShiduRatio.setThirdText( "%" );
-		mShiduRatio.setCurrentProgress( 0 );
+		mShiduRatio.setCurrentProgress(  0 );
 		mShiduRatio.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mShiduRatio.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mShiduRatio.setProgressCircleColor( getResources().getColor( R.color.colorHumanity ) );
+
+
+
+//		mShiduRatio.setProgress(downLength);
+
+//		mShiduRatio.setProgressNumberFormat();
+
 
 
 	}
@@ -537,7 +544,8 @@ public class Remote extends BaseFragment {
 						remoteParamsRedis.setData( data );
 						remoteParamsRedis.setMsg( msg );
 
-						mCo2SetPb.setCurrentProgress( remoteParamsRedis.getData() );
+						mCo2SetPb.setCurrentProgress( remoteParamsRedis.getData());
+//						mCo2SetPb.setCurrentProgress( 8.9f );
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}
@@ -675,7 +683,8 @@ public class Remote extends BaseFragment {
 						remoteParamsRedis.setData( data );
 						remoteParamsRedis.setMsg( msg );
 
-						mShiduRatio.setCurrentProgress( remoteParamsRedis.getData() );
+						mShiduRatio.setCurrentProgress( remoteParamsRedis.getData());
+//						mShiduRatio.setCurrentProgress( 0.5f);
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}

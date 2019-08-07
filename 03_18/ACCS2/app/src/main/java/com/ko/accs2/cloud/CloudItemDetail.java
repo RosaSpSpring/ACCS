@@ -93,8 +93,8 @@ public class CloudItemDetail extends AppCompatActivity implements View.OnClickLi
 		//        requestWindowFeature(getWindow().FEATURE_CONTENT_TRANSITIONS);
 		//        //设置其他view的退出方式
 		//        getWindow().setExitTransition(new Slide(Gravity.CENTER));
-		YcShareElement.enableContentTransition( getApplication() );
-		YcShareElement.setExitTransition( this, new Slide( Gravity.LEFT ) );
+		YcShareElement.enableContentTransition( getApplication());
+		YcShareElement.setExitTransition( this, new Slide( Gravity.LEFT ));
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.cloud_item_detail );
 		/**
@@ -106,7 +106,6 @@ public class CloudItemDetail extends AppCompatActivity implements View.OnClickLi
 		//获得数据
 
 		CloudDataBean.ItemData itemData = (CloudDataBean.ItemData) getIntent().getSerializableExtra( KEY_CONTACTS );
-
 
 		initView();
 		initListener();

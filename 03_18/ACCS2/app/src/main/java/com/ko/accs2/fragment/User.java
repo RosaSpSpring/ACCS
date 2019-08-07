@@ -64,12 +64,12 @@ public class User extends BaseFragment implements View.OnClickListener {
 
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		// TODO: inflate a fragment view
 		View rootView = super.onCreateView( inflater, container, savedInstanceState );
 		unbinder = ButterKnife.bind( this, rootView );
 		getResponse();
-		String code = CacheUtils.getString( mContext, "LoginActivitycode" );
+		String code = CacheUtils.getString( mContext, "LoginActivitycode");
 		Log.e( TAG, "code" + code );
 //		if (code == "200") {
 //			mUserDeviceStatus.setText( "当前设备在线中");
@@ -81,16 +81,14 @@ public class User extends BaseFragment implements View.OnClickListener {
 	}
 
 
-	private void getResponse() {
+	private void getResponse(){
 		//几号设备
-		String response = CacheUtils.getString( mContext, "BoundedDevice2" );
+		String response = CacheUtils.getString( mContext, "BoundedDevice2");
 		if (response != null) {
-//			mDceviceShow.setText( response );
-			mDceviceShow.setText( "response" );
+			mDceviceShow.setText( "" );
+//			mDceviceShow.setText( response);
 		}
-
 	}
-
 
 	@Override
 	public void onDestroyView() {

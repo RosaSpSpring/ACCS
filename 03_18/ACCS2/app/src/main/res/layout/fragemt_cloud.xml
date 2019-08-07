@@ -115,11 +115,6 @@
                     android:layout_weight="1"
                     android:text="@string/cloudpihao"
                     />
-                <TextView
-                    android:layout_width="0dp"
-
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.2"/>
 
                 <EditText
                     android:id="@+id/cloud_pihao_et"
@@ -150,11 +145,6 @@
                     android:layout_weight="1"
                     android:text="@string/clouddaici"
                     />
-                <TextView
-                    android:layout_width="0dp"
-
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.2"/>
 
                 <EditText
                     android:id="@+id/cloud_daici_et"
@@ -335,8 +325,6 @@
                     app:layout_constraintEnd_toEndOf="@+id/cloud_huanyeshijian_tv"
                     app:layout_constraintTop_toTopOf="@+id/cloud_huanyeshijian_tv"
                     />
-
-
             </android.support.constraint.ConstraintLayout>
 
             <TextView
@@ -361,8 +349,8 @@
             android:layout_weight="1">
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"/>
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"/>
             <Button
                 android:id="@+id/cloud_btn_search"
                 android:layout_width="0dp"
@@ -376,8 +364,8 @@
                 />
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"/>
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"/>
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"

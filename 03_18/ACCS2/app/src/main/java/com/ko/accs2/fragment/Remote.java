@@ -238,8 +238,6 @@ public class Remote extends BaseFragment {
 		mVideoView.setVideoURI( Uri.parse( url ));
 		//设置控制面板
 		//		mVideoView.setMediaController( new MediaController( mContext ) );
-
-
 		return view;
 	}
 

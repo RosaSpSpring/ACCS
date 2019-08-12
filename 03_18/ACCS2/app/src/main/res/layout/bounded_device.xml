@@ -10,7 +10,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.078"
         android:background="@color/colorRB"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -40,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_weight="0.205">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="0.1dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center_vertical"
                 android:text="当前设备"
                 android:textColor="#bdbdbd"
@@ -64,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:layout_weight="0.001"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@color/colorBrightGray">
 
         </LinearLayout>
@@ -78,15 +79,13 @@
                 android:id="@+id/dangqianshebeikuang"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                tools:layout_editor_absoluteY="17dp">
+                >
 
                 <TextView
                     android:id="@+id/dangqianshebei"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:maxLength="100"
                     android:padding="0.1dp"
                     android:text="当前未绑定任何仪器"
@@ -97,15 +96,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp"
-                    android:layout_marginEnd="18dp"
-                    android:src="@drawable/online"
-                    app:layout_constraintVertical_bias="0.5"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
                     android:id="@+id/dangqianshebeima"
@@ -122,6 +112,20 @@
                     app:layout_constraintStart_toStartOf="@+id/dangqianshebei"
                     app:layout_constraintTop_toBottomOf="@+id/dangqianshebei"
                     />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/online"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.045"
+                    app:layout_constraintWidth_default="percent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    tools:ignore="ContentDescription"/>
 
             </android.support.constraint.ConstraintLayout>
 
@@ -145,7 +149,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center"
                 android:padding="0.1dp"
                 android:text="已绑设备"
@@ -169,20 +173,12 @@
         android:id="@+id/device_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="16dp"
-        android:layout_weight="7"
+        android:layout_marginStart="16dp"
+        android:layout_weight="0.717"
         android:divider="@color/colorBrightGray"
         android:dividerHeight="0.1dp">
 
     </ListView>
-    <!--这是一个divider浅色-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginLeft="16dp"
-        android:background="@color/colorBrightGray">
 
-    </LinearLayout>
 
 </LinearLayout>

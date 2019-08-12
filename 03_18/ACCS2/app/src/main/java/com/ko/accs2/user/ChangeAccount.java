@@ -40,9 +40,9 @@ public class ChangeAccount extends AppCompatActivity {
 		setContentView( R.layout.change_account );
 		ButterKnife.bind( this );
 		StatusBarCompat.setStatusBarColor( this, getResources().getColor( R.color.colorRB ), false );
-		mChangeAccountListView = findViewById( R.id.lv_change_account );
 		mBackarrowChangeaccount = findViewById(R.id.backarrow_changeaccount);
-		mChangeAccountListView.setAdapter( new MyChangeAccountAdapter() );
+//		mChangeAccountListView = findViewById( R.id.lv_change_account );
+//		mChangeAccountListView.setAdapter( new MyChangeAccountAdapter() );
 		initData();
 		initListener();
 

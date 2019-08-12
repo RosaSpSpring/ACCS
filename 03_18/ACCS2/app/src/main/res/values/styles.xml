@@ -26,7 +26,7 @@
         <item name="android:button">@null</item>
         <item name="android:textColor">@drawable/main_text_color_selector</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:drawablePadding">7dp</item>
+        <item name="android:drawablePadding">1dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
@@ -51,6 +51,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
 
     </style>
     <!--clouditemItem中textView的样式-->
@@ -66,25 +67,20 @@
     <!--clouditem_detail 中textView的样式-->
     <style name="CloudItemDetail">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorCloudItemDetail</item>
-        <item name="android:layout_weight">8</item>
         <item name="android:gravity">center_vertical|left</item>
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">3dp</item>
-        <item name="android:paddingTop">3dp</item>
-        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingStart">10dp</item>
     </style>
     <!--clouditem_detail 中EditText的样式-->
     <style name="CloudItemDetailEditText">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorCloudItemDetail</item>
-        <item name="android:layout_weight">25</item>
         <item name="android:gravity">center_vertical|left</item>
-        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingStart">5dp</item>
     </style>
     <style name="FadeInPopWin">
         <item name="android:backgroundDimEnabled">true</item>

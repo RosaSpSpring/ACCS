@@ -6,7 +6,8 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.078"
         android:background="@color/colorRB"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -23,7 +24,8 @@
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.922"
         android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
@@ -33,11 +35,5 @@
             android:textColor="@color/colorBlack"/>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lv_change_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ListView>
 
 </LinearLayout>

@@ -11,7 +11,7 @@
     <!--帧布局-->
     <FrameLayout
         android:id="@+id/fl_content"
-        android:layout_weight="1"
+        android:layout_weight="0.833"
         android:background="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="0dp">
@@ -32,14 +32,14 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="57dp">
+        android:layout_height="0dp"
+        android:layout_weight="0.089">
 
 
         <RadioButton
             android:id="@+id/rb_1"
             android:text="@string/title_home"
             android:drawableTop="@drawable/main_cloud_selector"
-
             style="@style/RadioGroup"/>
 
         <RadioButton

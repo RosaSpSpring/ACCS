@@ -86,7 +86,6 @@ public class MainActivity extends FragmentActivity {
         setListener();
 
 
-
     }
 
 

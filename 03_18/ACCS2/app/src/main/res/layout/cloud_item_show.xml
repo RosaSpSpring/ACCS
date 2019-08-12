@@ -8,7 +8,8 @@
     tools:context=".MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.078"
         android:background="@color/colorRB"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -20,55 +21,59 @@
             android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:src="@mipmap/arrow"/>
+            android:src="@mipmap/arrow"
+            tools:ignore="ContentDescription"/>
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.069"
         android:paddingTop="10dp"
-        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
         android:paddingBottom="10dp"
-        android:paddingLeft="2dp"
+        android:paddingStart="2dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/cloueitem_xibaomingcheng"
             style="@style/CloudItem"
-            android:text="细胞名称"/>
+            android:text="@string/cell_name"/>
 
         <TextView
             android:id="@+id/cloueitem_chuandaishijian"
             style="@style/CloudItem"
 
-            android:text="传代时间"/>
+            android:text="@string/generation_time"/>
 
         <TextView
             android:id="@+id/cloueitem_peiyangshijian"
             style="@style/CloudItem"
-            android:text="培养时间"/>
+            android:text="@string/incubation_time"/>
 
         <TextView
             android:id="@+id/cloueitem_xibaohuanyeshijian"
             style="@style/CloudItem"
-            android:text="换液时间"/>
+            android:text="@string/the_time_of_changing_liquid"/>
 
         <TextView
             android:id="@+id/cloueitem_tupian"
             style="@style/CloudItem"
-            android:text="图片"/>
+            android:text="@string/image"/>
     </LinearLayout>
-    <LinearLayout
+    <TextView
         android:background="#dfdfdf"
         android:layout_width="match_parent"
-        android:layout_height="0.2dp">
-    </LinearLayout>
+        android:layout_weight="0.001"
+        android:layout_height="0.2dp"/>
+
     <ListView
         android:id="@+id/clouditem_lv"
         android:divider="@null"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="0.853">
 
     </ListView>
 

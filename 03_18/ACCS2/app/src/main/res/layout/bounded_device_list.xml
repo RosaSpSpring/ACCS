@@ -8,41 +8,53 @@
     android:descendantFocusability="blocksDescendants"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    tools:layout_editor_absoluteY="25dp">
+    >
 
 
     <TextView
         android:id="@+id/yibangshebei"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="设备名称"
         android:textColor="#528bc3"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/device_line"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/offline"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        />
+
+
 
     <TextView
         android:id="@+id/yibangshebeima"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:paddingLeft="1dp"
+        android:layout_marginStart="1dp"
         android:text="设备码"
+        android:padding="1dp"
         android:textColor="#bdbdbd"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/yibangshebei"
+        app:layout_constraintStart_toStartOf="@id/yibangshebei"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintTop_toBottomOf="@+id/yibangshebei"/>
+
+    <ImageView
+        android:id="@+id/device_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/offline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.045"
+        app:layout_constraintDimensionRatio="1:1"
+        tools:ignore="ContentDescription"/>
 
 
 </android.support.constraint.ConstraintLayout>

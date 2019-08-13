@@ -22,4 +22,20 @@
     <string name="incubation_time">培养时间</string>
     <string name="the_time_of_changing_liquid">换液时间</string>
     <string name="image">图片</string>
+    <string name="device_num">设备1</string>
+    <string name="bounded_devices">已绑设备</string>
+    <string name="setting">设置</string>
+    <string name="username">用户名:</string>
+    <string name="username_admin">admin</string>
+    <string name="login">登录</string>
+    <string name="username_hint">请输入用户名</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="logout">退出登录</string>
+    <string name="change_account">切换账号</string>
+    <string name="culbator_params">培养箱参数</string>
+    <string name="temperature_setting">温度设定值</string>
+    <string name="temperature_current">温度当前值</string>
+    <string name="co2_setting">CO2设定值</string>
+    <string name="co2_current">CO₂当前值</string>
+    <string name="humidity_percent">湿度百分比</string>
 </resources>

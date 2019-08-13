@@ -3,15 +3,14 @@ package com.ko.accs2.constant;
 /**
  * @author Admin
  * @version $Rev$
- * @des ${TODO}
- * @updateAuthor $Author$
- * @updateDes ${TODO}
+ * @des ${联网请求的所有地址}
+ * @updateAuthor lxm
+ * @updateDes ${first time}
  * 常量类存储联网地址
  */
 public class Constant {
     //根地址
     public static final String ROOTURL = "http://";
-
     //登录地址
     public static final String LOGINURL = "http://keyonecn.com:8897/user/login?username=Cherry&&password=123456";
     //图片地址

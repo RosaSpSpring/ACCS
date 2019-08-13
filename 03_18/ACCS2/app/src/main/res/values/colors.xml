@@ -14,8 +14,8 @@
     <color name="colorBBrightGray">#F5F5F5</color>
     <color name="colorWhitegGray">#F8F8FF</color>
     <color name="colorNavigation">#fcfcfc</color>
-    <color name="colorSet">#3cddff</color>
-    <color name="colorCur">#3cddff</color>
+    <color name="colorSet">#ffca3b</color>
+    <color name="colorCur">#fd840d</color>
     <color name="colorHumanity">#00cf3a</color>
     <color name="colorProgressBarTextColor">#528bc3</color>
 

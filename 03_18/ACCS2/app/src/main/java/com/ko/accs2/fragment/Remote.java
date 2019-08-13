@@ -1,6 +1,7 @@
 package com.ko.accs2.fragment;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -56,6 +58,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -168,7 +171,7 @@ public class Remote extends BaseFragment {
 				permissions.add( Manifest.permission.ACCESS_FINE_LOCATION );
 			}
 			if (permissions.size() != 0) {
-				ActivityCompat.requestPermissions( (Activity) mContext, (String[]) permissions.toArray( new String[0] ), WRITE_PERMISSION_REQ_CODE );
+				ActivityCompat.requestPermissions( (Activity) mContext, permissions.toArray( new String[0] ), WRITE_PERMISSION_REQ_CODE );
 				return false;
 			}
 		}
@@ -176,35 +179,31 @@ public class Remote extends BaseFragment {
 	}
 
 	@Override
-	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 		super.onRequestPermissionsResult( requestCode, permissions, grantResults );
-		switch (requestCode) {
-			case WRITE_PERMISSION_REQ_CODE:
-				initPlayer();
-				for (int ret : grantResults) {
-					if (ret != PackageManager.PERMISSION_GRANTED) {
-						return;
-					}
+		if (requestCode == WRITE_PERMISSION_REQ_CODE) {
+			initPlayer();
+			for (int ret : grantResults) {
+				if (ret != PackageManager.PERMISSION_GRANTED) {
+					return;
 				}
-				bPermission = true;
-				break;
-			default:
-				break;
+			}
+			bPermission = true;
 		}
 	}
 
 
 	@Override
 	protected View initView() {
-		/**   6.0权限申请     **/
+		/*   6.0权限申请     **/
 		bPermission = checkPublishPermission();
 		View view = View.inflate( mContext, R.layout.remote_fragment, null );
 		// 尽量在请求权限后再初始化
 		if (bPermission) {
 			initPlayer();
 		}
-		/** 触摸事件的注册 */
-		((MainActivity) this.getActivity()).registerMyOnTouchListener( onTouchListener );
+		/* 触摸事件的注册 */
+		((MainActivity) Objects.requireNonNull( this.getActivity() )).registerMyOnTouchListener( onTouchListener );
 
 		mTemCurPb = view.findViewById( R.id.tem_cur_pb );
 		mTemSetPb = view.findViewById( R.id.tem_set_pb );
@@ -319,8 +318,8 @@ public class Remote extends BaseFragment {
 	public void onDestroy() {
 		Log.d( TAG, "on destroy" );
 		super.onDestroy();
-		/** 触摸事件的注销 */
-		((MainActivity) this.getActivity()).unregisterMyOnTouchListener( onTouchListener );
+		/*触摸事件的注销 */
+		((MainActivity) Objects.requireNonNull( this.getActivity() )).unregisterMyOnTouchListener( onTouchListener );
 
 	}
 
@@ -343,19 +342,11 @@ public class Remote extends BaseFragment {
 	}
 
 
-	private NELivePlayer.OnDynamicLoadingListener mOnDynamicLoadingListener = new NELivePlayer.OnDynamicLoadingListener() {
-		@Override
-		public void onDynamicLoading(NEDynamicLoadingConfig.ArchitectureType type, boolean isCompleted) {
-			Log.d( TAG, "type:" + type + "，isCompleted:" + isCompleted );
-		}
-	};
+	private NELivePlayer.OnDynamicLoadingListener mOnDynamicLoadingListener = (type, isCompleted) -> Log.d( TAG, "type:" + type + "，isCompleted:" + isCompleted );
 
-	private NELivePlayer.OnSupportDecodeListener mOnSupportDecodeListener = new NELivePlayer.OnSupportDecodeListener() {
-		@Override
-		public void onSupportDecode(boolean isSupport) {
-			Log.d( TAG, "是否支持H265硬件解码 onSupportDecode isSupport:" + isSupport );
-			//如果支持H265硬件解码，那么可以使用H265的视频源进行播放
-		}
+	private NELivePlayer.OnSupportDecodeListener mOnSupportDecodeListener = isSupport -> {
+		Log.d( TAG, "是否支持H265硬件解码 onSupportDecode isSupport:" + isSupport );
+		//如果支持H265硬件解码，那么可以使用H265的视频源进行播放
 	};
 
 
@@ -421,7 +412,7 @@ public class Remote extends BaseFragment {
 		mTemCurPb.setProgressCircleColor( getResources().getColor( R.color.colorCur ) );
 
 		mCo2SetPb.setThirdText( "%" );
-		mCo2SetPb.setCurrentProgress(  0);
+		mCo2SetPb.setCurrentProgress( 0);
 		mCo2SetPb.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2SetPb.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2SetPb.setProgressCircleColor( getResources().getColor( R.color.colorSet ) );
@@ -433,7 +424,7 @@ public class Remote extends BaseFragment {
 		mCo2CurPb.setProgressCircleColor( getResources().getColor( R.color.colorCur ) );
 
 		mShiduRatio.setThirdText( "%" );
-		mShiduRatio.setCurrentProgress(  0 );
+		mShiduRatio.setCurrentProgress( 0 );
 		mShiduRatio.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mShiduRatio.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mShiduRatio.setProgressCircleColor( getResources().getColor( R.color.colorHumanity ) );
@@ -449,14 +440,15 @@ public class Remote extends BaseFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO: inflate a fragment view
 		View rootView = super.onCreateView( inflater, container, savedInstanceState );
+		assert rootView != null;
 		unbinder = ButterKnife.bind( this, rootView );
 
 
 		//		url = PARAMS;
-		url = PARAMSRADIUS +"aCO2";
+		url = PARAMSRADIUS +"CO2";
 
 
 		//联网请求co2当前参数
@@ -487,8 +479,8 @@ public class Remote extends BaseFragment {
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
-						Integer code = jsonObject.optInt( "code" );
-						Integer data = jsonObject.optInt( "data" );
+						int code = jsonObject.optInt( "code" );
+						int data = jsonObject.optInt( "data" );
 
 						remoteParamsRedis.setCode( code );
 						remoteParamsRedis.setData( data );
@@ -499,7 +491,7 @@ public class Remote extends BaseFragment {
 						e.printStackTrace();
 					}
 					//					processData( response );
-					Log.e( TAG, "response" + response.toString());
+					Log.e( TAG, "response" + response);
 
 				} else {
 					Log.e( TAG, "请求结果为空" );
@@ -507,7 +499,7 @@ public class Remote extends BaseFragment {
 			}
 		} );
 		//co2设定值
-		String co2settUrl  = PARAMSRADIUS +"aCO2Set";
+		String co2settUrl  = PARAMSRADIUS +"CO2Set";
 		OkHttpUtils.post().url( co2settUrl ).build().execute( new StringCallback() {
 			@Override
 			public void onError(Call call, Exception e, int id) {
@@ -535,8 +527,8 @@ public class Remote extends BaseFragment {
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
-						Integer code = jsonObject.optInt( "code" );
-						Integer data = jsonObject.optInt( "data" );
+						int code = jsonObject.optInt( "code" );
+						int data = jsonObject.optInt( "data" );
 
 						remoteParamsRedis.setCode( code );
 						remoteParamsRedis.setData( data );
@@ -554,7 +546,7 @@ public class Remote extends BaseFragment {
 			}
 		} );
 		//温度当前值
-		String temcurUrl =  PARAMSRADIUS +"atemperature";
+		String temcurUrl =  PARAMSRADIUS +"temperature";
 
 		OkHttpUtils.post().url( temcurUrl ).build().execute( new StringCallback() {
 			@Override
@@ -583,8 +575,8 @@ public class Remote extends BaseFragment {
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
-						Integer code = jsonObject.optInt( "code" );
-						Integer data = jsonObject.optInt( "data" );
+						int code = jsonObject.optInt( "code" );
+						int data = jsonObject.optInt( "data" );
 
 						remoteParamsRedis.setCode( code );
 						remoteParamsRedis.setData( data );
@@ -601,7 +593,7 @@ public class Remote extends BaseFragment {
 			}
 		} );
 		//温度设定值
-		String temsetUrl =  PARAMSRADIUS +"atemperatureSet";
+		String temsetUrl =  PARAMSRADIUS +"temperatureSet";
 		OkHttpUtils.post().url( temsetUrl ).build().execute( new StringCallback() {
 			@Override
 			public void onError(Call call, Exception e, int id) {
@@ -629,8 +621,8 @@ public class Remote extends BaseFragment {
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
-						Integer code = jsonObject.optInt( "code" );
-						Integer data = jsonObject.optInt( "data" );
+						int code = jsonObject.optInt( "code" );
+						int data = jsonObject.optInt( "data" );
 
 						remoteParamsRedis.setCode( code );
 						remoteParamsRedis.setData( data );
@@ -646,7 +638,7 @@ public class Remote extends BaseFragment {
 				}
 			}
 		} );
-		String humidityUrl =  PARAMSRADIUS +"ahumidity";
+		String humidityUrl =  PARAMSRADIUS +"humidity";
 		OkHttpUtils.post().url( humidityUrl ).build().execute( new StringCallback() {
 			@Override
 			public void onError(Call call, Exception e, int id) {
@@ -674,8 +666,8 @@ public class Remote extends BaseFragment {
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
-						Integer code = jsonObject.optInt( "code" );
-						Integer data = jsonObject.optInt( "data" );
+						int code = jsonObject.optInt( "code" );
+						int data = jsonObject.optInt( "data" );
 
 						remoteParamsRedis.setCode( code );
 						remoteParamsRedis.setData( data );
@@ -703,6 +695,7 @@ public class Remote extends BaseFragment {
 
 
 
+	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -751,12 +744,9 @@ public class Remote extends BaseFragment {
 
 	//在Fragment中注册事件
 
-	MainActivity.MyOnTouchListener onTouchListener = new MainActivity.MyOnTouchListener() {
-		@Override
-		public boolean onTouch(MotionEvent ev) {
-			mDetector.onTouchEvent( ev );
-			return false;
-		}
+	MainActivity.MyOnTouchListener onTouchListener = ev -> {
+		mDetector.onTouchEvent( ev );
+		return false;
 	};
 
 
@@ -916,27 +906,24 @@ public class Remote extends BaseFragment {
 		public void onPrepared(MediaPlayer mp) {
 			//准备好后回调开始播放
 			mVideoView.start();
-			mVideoPlayerMute.setOnClickListener( new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (!isMute) {
-						mp.setVolume( 0f, 0f );
-						mVideoPlayerMute.setImageResource( R.drawable.nemediacontroller_mute01 );
-						LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mMediacontrollerPlayPause.getLayoutParams();
-						params.height = PixeUtils.dip2px( mContext, 40 );
-						params.width = PixeUtils.dip2px( mContext, 10 );
-						mVideoPlayerMute.setLayoutParams( params );
-						isMute = true;
+			mVideoPlayerMute.setOnClickListener( v -> {
+				if (!isMute) {
+					mp.setVolume( 0f, 0f );
+					mVideoPlayerMute.setImageResource( R.drawable.nemediacontroller_mute01 );
+					LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mMediacontrollerPlayPause.getLayoutParams();
+					params.height = PixeUtils.dip2px( mContext, 40 );
+					params.width = PixeUtils.dip2px( mContext, 10 );
+					mVideoPlayerMute.setLayoutParams( params );
+					isMute = true;
 
-					} else {
-						mp.setVolume( 1, 1 );
-						mVideoPlayerMute.setImageResource( R.drawable.nemediacontroller_mute02 );
-						LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mMediacontrollerPlayPause.getLayoutParams();
-						params.height = PixeUtils.dip2px( mContext, 40 );
-						params.width = PixeUtils.dip2px( mContext, 10 );
-						mVideoPlayerMute.setLayoutParams( params );
-						isMute = false;
-					}
+				} else {
+					mp.setVolume( 1, 1 );
+					mVideoPlayerMute.setImageResource( R.drawable.nemediacontroller_mute02 );
+					LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mMediacontrollerPlayPause.getLayoutParams();
+					params.height = PixeUtils.dip2px( mContext, 40 );
+					params.width = PixeUtils.dip2px( mContext, 10 );
+					mVideoPlayerMute.setLayoutParams( params );
+					isMute = false;
 				}
 			} );
 

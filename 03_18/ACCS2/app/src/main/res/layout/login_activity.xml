@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/main_bg"
     tools:layout_editor_absoluteY="25dp">
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.2"/>
@@ -21,7 +21,7 @@
         android:layout_weight="0.7"
         android:padding="1dp"
         android:src="@mipmap/logo_bt"
-        />
+        tools:ignore="ContentDescription"/>
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -29,46 +29,71 @@
         android:layout_weight="0.7"
         android:padding="1dp"
         android:src="@mipmap/main_clouddata"
-        />
-    <LinearLayout
+        tools:ignore="ContentDescription"/>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <EditText
-        android:id="@+id/et_user"
-        android:layout_width="259dp"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:drawableLeft="@mipmap/main_user"
-        android:drawablePadding="35dp"
-        android:inputType="text"
-        android:maxLength="20"
-        android:maxLines="1"
-        android:paddingLeft="15dp"
-        android:text=""
-        android:textColor="@color/colorBlack"
-        android:textSize="14sp"
-        android:theme="@style/MyEditText"
-        />
+        android:layout_weight="2">
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="256.66dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:drawableLeft="@mipmap/main_password"
-        android:drawablePadding="35dp"
-        android:inputType="text|textPassword"
-        android:maxLength="20"
-        android:text=""
-        android:maxLines="1"
-        android:paddingLeft="15dp"
-        android:textColor="@color/colorBlack"
-        android:textSize="14sp"
-        android:theme="@style/MyEditText"
-        />
-    <LinearLayout
+        <EditText
+            android:id="@+id/et_user"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawableStart="@mipmap/main_user"
+            android:drawablePadding="35dp"
+            android:gravity="center_vertical"
+            android:hint="@string/username_hint"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:paddingStart="25dp"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:theme="@style/MyEditText"
+            app:layout_constraintBottom_toTopOf="@+id/et_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.65"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawableStart="@mipmap/main_password"
+            android:drawablePadding="35dp"
+            android:gravity="center_vertical|start"
+            android:hint="@string/password_hint"
+            android:inputType="text|textPassword"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:paddingStart="25dp"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:theme="@style/MyEditText"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.65"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_user"/>
+    </android.support.constraint.ConstraintLayout>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"/>
@@ -79,10 +104,10 @@
         android:layout_weight="0.5"
         android:background="@drawable/main_login_btn_selector"
         android:padding="1dp"
-        android:text="登录"
+        android:text="@string/login"
         android:textColor="@color/colorWhite"
         />
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2.4"/>

@@ -59,7 +59,14 @@
 
         <TextView
             android:id="@+id/cloueitem_tupian"
-            style="@style/CloudItem"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorBlack"
             android:text="@string/image"/>
     </LinearLayout>
     <TextView

@@ -59,10 +59,13 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
+                android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
                 android:src="@drawable/arrow_right"
                 tools:ignore="ContentDescription"/>
         </RelativeLayout>
@@ -93,14 +96,13 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
+                android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="12dp"
-                android:paddingLeft="2dp"
-                android:paddingRight="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
                 android:src="@drawable/arrow_right"
                 tools:ignore="ContentDescription"/>
         </RelativeLayout>

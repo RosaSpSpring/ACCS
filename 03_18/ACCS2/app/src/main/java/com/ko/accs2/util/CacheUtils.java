@@ -19,7 +19,7 @@ public class CacheUtils {
          */
         public static  void putString(Context context, String key, String values){
             SharedPreferences sharedPreferences = context.getSharedPreferences("atguigu",Context.MODE_PRIVATE);
-            sharedPreferences.edit().putString(key,values).commit();
+            sharedPreferences.edit().putString(key,values).apply();
         }
 
         /**

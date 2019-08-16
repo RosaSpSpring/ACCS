@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="main_login_button_color">#1a315c</color>
+    <color name="main_login_button_color">#2d5090</color>
     <color name="colorBlack">#000000</color>
-    <color name="main_login_button_unclick_color">#2d5090</color>
+    <color name="main_login_button_unclick_color">#5e98cd</color>
     <color name="colorRB">#528bc3</color>
     <color name="colorRBU">#a6a6a6</color>
     <color name="colorCloudItemDetail">#757575</color>

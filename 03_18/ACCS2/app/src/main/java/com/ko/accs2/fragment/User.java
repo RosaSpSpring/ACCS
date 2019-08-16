@@ -12,9 +12,16 @@ import android.widget.TextView;
 
 import com.ko.accs2.R;
 import com.ko.accs2.base.BaseFragment;
+import com.ko.accs2.bean.UserBean;
 import com.ko.accs2.user.BoundedDevices;
 import com.ko.accs2.user.UserSetting;
 import com.ko.accs2.util.CacheUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,7 +56,6 @@ public class User extends BaseFragment implements View.OnClickListener {
 		mUserUsername = view.findViewById( R.id.user_username );
 		mUserDeviceStatus = view.findViewById( R.id.user_device_status );
 		mDceviceShow = view.findViewById( R.id.dcevice_show );
-
 		mBounddevice = view.findViewById( R.id.bounddevice );
 		mUserSetting = view.findViewById( R.id.user_setting );
 
@@ -64,9 +70,15 @@ public class User extends BaseFragment implements View.OnClickListener {
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO: inflate a fragment view
 		View rootView = super.onCreateView( inflater, container, savedInstanceState );
+		assert rootView != null;
 		unbinder = ButterKnife.bind( this, rootView );
+
+
+
 		getResponse();
 		String code = CacheUtils.getString( mContext, "LoginActivitycode" );
+		String username = CacheUtils.getString( mContext,"Username" );
+		mUserUsername.setText( username );
 		Log.e( TAG, "code" + code );
 		//		if (code == "200") {
 		//			mUserDeviceStatus.setText( "当前设备在线中");
@@ -74,16 +86,25 @@ public class User extends BaseFragment implements View.OnClickListener {
 		//			mUserDeviceStatus.setText( "当前设备离线" );
 		//		}
 
+
 		return rootView;
+	}
+	@Subscribe(threadMode = ThreadMode.MAIN)
+	public void getUserBean(UserBean userBean) {
+		Log.e(TAG, "userbean.msg" + userBean.getMsg());
+
 	}
 
 
 	private void getResponse() {
 		//几号设备
 		String response = CacheUtils.getString( mContext, "BoundedDevice2" );
+		Log.e(TAG, "response" + response);
 		if (response != null) {
 			mDceviceShow.setText( "" );
 			//			mDceviceShow.setText( response);
+		}else {
+			Log.e(TAG, "response为空字符" );
 		}
 	}
 
@@ -91,6 +112,20 @@ public class User extends BaseFragment implements View.OnClickListener {
 	public void onDestroyView() {
 		super.onDestroyView();
 		unbinder.unbind();
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		//注册eventbus
+//		EventBus.getDefault().register( this );
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		//解注册
+		EventBus.getDefault().unregister( this );
 	}
 
 	@Override

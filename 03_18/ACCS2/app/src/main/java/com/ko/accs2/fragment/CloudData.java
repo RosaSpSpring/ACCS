@@ -296,7 +296,7 @@ public class CloudData extends BaseFragment {
 						mCloudHuanyeshijianTv.getText().toString().trim().equals( "" ) ) {
 					//					CloudUrl = "http://keyonecn.com:8897/training/phone?cellname=&&batch_num=&&submission=&&serial_num=&&culture_time=&&passage_time=&&change_liquid_time=";
 					//					CloudUrl = "http://keyonecn.com:8897/training/phone?cellname=cell1&&batch_num&&submission=&&serial_num=";
-					bundle.putString( "CloudUrl", CloudUrl );
+					bundle.putString( "CloudUrl", CloudUrl);
 					intent.putExtras( bundle );
 					intent.setClass( mContext, CloudItem.class );
 					startActivity( intent );

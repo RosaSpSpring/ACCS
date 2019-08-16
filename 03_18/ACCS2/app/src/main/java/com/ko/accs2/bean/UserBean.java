@@ -1,7 +1,6 @@
 package com.ko.accs2.bean;
 
 
-import java.util.List;
 /**
  * @author Admin
  * @version $Rev$
@@ -10,30 +9,55 @@ import java.util.List;
  * @updateDes ${TODO}
  */
 public class UserBean {
-    private List<ItemUserBean> data;
 
-    public List<ItemUserBean> getData() {
+    /**
+     * code : 200
+     * msg : success
+     * data : {"id":11,"name":"123","pass":"123","content":"123","comID":1}
+     */
+
+    public int code;
+    public String msg;
+    public DataBean data;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(List<ItemUserBean> data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
-    public static class ItemUserBean {
-        private int id;
-        private String username;
-        private String password;
+    public static class DataBean {
+        /**
+         * id : 11
+         * name : 123
+         * pass : 123
+         * content : 123
+         * comID : 1
+         */
 
-        public ItemUserBean(int id, String username, String password) {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-        }
-
-        public ItemUserBean() {
-
-        }
+        public int id;
+        public String name;
+        public String pass;
+        public String content;
+        public int comID;
 
         public int getId() {
             return id;
@@ -43,29 +67,36 @@ public class UserBean {
             this.id = id;
         }
 
-        public String getUsername() {
-            return username;
+        public String getName() {
+            return name;
         }
 
-        public void setUsername(String username) {
-            this.username = username;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public String getPassword() {
-            return password;
+        public String getPass() {
+            return pass;
         }
 
-        public void setPassword(String password) {
-            this.password = password;
+        public void setPass(String pass) {
+            this.pass = pass;
         }
 
-        @Override
-        public String toString() {
-            return "ItemUserBean{" +
-                    "id=" + id +
-                    ", username='" + username + '\'' +
-                    ", password='" + password + '\'' +
-                    '}';
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
+        }
+
+        public int getComID() {
+            return comID;
+        }
+
+        public void setComID(int comID) {
+            this.comID = comID;
         }
     }
 }

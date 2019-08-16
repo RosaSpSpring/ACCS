@@ -72,7 +72,6 @@ public class CloudItem extends Activity implements View.OnClickListener{
         //获取从云端fragment的url
         String cloudUrl = getIntent().getExtras().getString( "CloudUrl" );
         Log.e(TAG, "cloudUrl" + cloudUrl);
-        Toast.makeText(this,"cloudUrl" + cloudUrl, Toast.LENGTH_SHORT).show();
         initView();
         initData();
         initListener();
@@ -102,6 +101,7 @@ public class CloudItem extends Activity implements View.OnClickListener{
                                 @Override
                                 public void onError(Call call, Exception e, int id) {
                                     e.printStackTrace();
+                                    Toast.makeText(CloudItem.this,"服务器返回数据失败", Toast.LENGTH_SHORT).show();
                                     Log.e(TAG, "请求失败");
                                 }
 
@@ -110,10 +110,8 @@ public class CloudItem extends Activity implements View.OnClickListener{
                                     Log.e(TAG, "onResponse:complete");
                                     switch (id) {
                                         case 100:
-                                            Toast.makeText(CloudItem.this, "http", Toast.LENGTH_SHORT).show();
                                             break;
                                         case 101:
-                                            Toast.makeText(CloudItem.this, "https", Toast.LENGTH_SHORT).show();
                                             break;
 
                                         default:
@@ -179,6 +177,7 @@ public class CloudItem extends Activity implements View.OnClickListener{
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.optJSONArray("data");
+
             if (jsonArray != null && jsonArray.length() > 0) {
                 List<CloudDataBean.ItemData> mydata = new ArrayList<>();
                 dataBean.setData(mydata);
@@ -238,6 +237,8 @@ public class CloudItem extends Activity implements View.OnClickListener{
 
                     }
                 }
+            }else {
+                Toast.makeText(this,"请求数据为0条", Toast.LENGTH_SHORT).show();
             }
 
         } catch (JSONException e) {

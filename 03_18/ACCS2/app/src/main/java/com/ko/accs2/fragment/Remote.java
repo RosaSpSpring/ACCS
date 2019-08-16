@@ -3,6 +3,7 @@ package com.ko.accs2.fragment;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -222,7 +224,6 @@ public class Remote extends BaseFragment {
 		url = VIDEOURL;
 
 
-
 		//		显示控制栏(无法快进)
 		//		mVideoView.setMediaController( new MediaController( mContext ) );
 		//添加监听 当底层解码准备好了开始回调
@@ -234,7 +235,7 @@ public class Remote extends BaseFragment {
 		// 播放完成回调 the end of a media file has been reached during playback.
 		mVideoView.setOnCompletionListener( new MyPlayerOnCompletionListener() );
 		//准备好了准备地址比较好
-		mVideoView.setVideoURI( Uri.parse( url ));
+		mVideoView.setVideoURI( Uri.parse( url ) );
 		//设置控制面板
 		//		mVideoView.setMediaController( new MediaController( mContext ) );
 		return view;
@@ -263,7 +264,7 @@ public class Remote extends BaseFragment {
 	//全屏视频地址
 	private void startAotic() {
 		//		String url = "http://v745decb8.live.126.net/live/8ca0aea7da304bdeaa391b6c097945e1.flv?netease=v745decb8.live.126.net";
-		String url =  VIDEOURL;
+		String url = VIDEOURL;
 		Log.d( TAG, "url = " + url );
 
 
@@ -310,19 +311,25 @@ public class Remote extends BaseFragment {
 
 	@Override
 	public void onPause() {
-		Log.d( TAG, "on pause" );
+		Log.e( TAG, "onPause 正在运行时调用比如播放视频时，或者浏览数据图片时调用" );
 		super.onPause();
 	}
 
 	@Override
 	public void onDestroy() {
-		Log.d( TAG, "on destroy" );
+		Log.e( TAG, "fragment不再使用时调用 需要注意的是，它即使经过了此方法，但是仍然可以在活动中找到，因为还未分离" );
 		super.onDestroy();
 		/*触摸事件的注销 */
 		((MainActivity) Objects.requireNonNull( this.getActivity() )).unregisterMyOnTouchListener( onTouchListener );
 
 	}
 
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		Log.e( TAG, "调用此方法就结束了fragment和activity的绑定彻底结束" );
+
+	}
 	//		@Override
 	//		public void onRestart() {
 	//			Log.d(TAG, "on restart");
@@ -331,13 +338,13 @@ public class Remote extends BaseFragment {
 
 	@Override
 	public void onResume() {
-		Log.d( TAG, "on resmue" );
+		Log.e( TAG, "当这个片是与用户交互的最后一个回调" );
 		super.onResume();
 	}
 
 	@Override
 	public void onStart() {
-		Log.d( TAG, "on start" );
+		Log.e( TAG, "OnStart" + "此刻开始fragment对用户可见但是交互并没有开始" );
 		super.onStart();
 	}
 
@@ -364,6 +371,7 @@ public class Remote extends BaseFragment {
 			return (new HttpPostUtils( url, params, filepaths ).connPost());
 		}
 	};
+
 
 	private boolean sendData(final String urlStr, final String content) {
 		int response = 0;
@@ -406,19 +414,19 @@ public class Remote extends BaseFragment {
 		mTemSetPb.setProgressCircleColor( getResources().getColor( R.color.colorSet ) );
 
 		mTemCurPb.setThirdText( "℃" );
-		mTemCurPb.setCurrentProgress(  0 );
+		mTemCurPb.setCurrentProgress( 0 );
 		mTemCurPb.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mTemCurPb.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mTemCurPb.setProgressCircleColor( getResources().getColor( R.color.colorCur ) );
 
 		mCo2SetPb.setThirdText( "%" );
-		mCo2SetPb.setCurrentProgress( 0);
+		mCo2SetPb.setCurrentProgress( 0 );
 		mCo2SetPb.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2SetPb.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2SetPb.setProgressCircleColor( getResources().getColor( R.color.colorSet ) );
 
 		mCo2CurPb.setThirdText( "%" );
-		mCo2CurPb.setCurrentProgress( 0);
+		mCo2CurPb.setCurrentProgress( 0 );
 		mCo2CurPb.setThirdTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2CurPb.setSecondTextColor( getResources().getColor( R.color.colorProgressBarTextColor ) );
 		mCo2CurPb.setProgressCircleColor( getResources().getColor( R.color.colorCur ) );
@@ -430,11 +438,9 @@ public class Remote extends BaseFragment {
 		mShiduRatio.setProgressCircleColor( getResources().getColor( R.color.colorHumanity ) );
 
 
+		//		mShiduRatio.setProgress(downLength);
 
-//		mShiduRatio.setProgress(downLength);
-
-//		mShiduRatio.setProgressNumberFormat();
-
+		//		mShiduRatio.setProgressNumberFormat();
 
 
 	}
@@ -448,9 +454,7 @@ public class Remote extends BaseFragment {
 
 
 		//		url = PARAMS;
-		url = PARAMSRADIUS +"CO2";
-
-
+		url = PARAMSRADIUS + "aCO2";
 		//联网请求co2当前参数
 		OkHttpUtils.post().url( url ).build().execute( new StringCallback() {
 			@Override
@@ -475,7 +479,7 @@ public class Remote extends BaseFragment {
 				}
 				if (response != null) {
 					CacheUtils.putString( mContext, url, response );
-					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis(  );
+					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis();
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
@@ -491,7 +495,7 @@ public class Remote extends BaseFragment {
 						e.printStackTrace();
 					}
 					//					processData( response );
-					Log.e( TAG, "response" + response);
+					Log.e( TAG, "response" + response );
 
 				} else {
 					Log.e( TAG, "请求结果为空" );
@@ -499,7 +503,7 @@ public class Remote extends BaseFragment {
 			}
 		} );
 		//co2设定值
-		String co2settUrl  = PARAMSRADIUS +"CO2Set";
+		String co2settUrl = PARAMSRADIUS + "aCO2Set";
 		OkHttpUtils.post().url( co2settUrl ).build().execute( new StringCallback() {
 			@Override
 			public void onError(Call call, Exception e, int id) {
@@ -523,7 +527,7 @@ public class Remote extends BaseFragment {
 				}
 				if (response != null) {
 					CacheUtils.putString( mContext, co2settUrl, response );
-					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis(  );
+					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis();
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
@@ -534,8 +538,8 @@ public class Remote extends BaseFragment {
 						remoteParamsRedis.setData( data );
 						remoteParamsRedis.setMsg( msg );
 
-						mCo2SetPb.setCurrentProgress( remoteParamsRedis.getData());
-//						mCo2SetPb.setCurrentProgress( 8.9f );
+						mCo2SetPb.setCurrentProgress( remoteParamsRedis.getData() );
+						//						mCo2SetPb.setCurrentProgress( 8.9f );
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}
@@ -546,7 +550,7 @@ public class Remote extends BaseFragment {
 			}
 		} );
 		//温度当前值
-		String temcurUrl =  PARAMSRADIUS +"temperature";
+		String temcurUrl = PARAMSRADIUS + "atemperature";
 
 		OkHttpUtils.post().url( temcurUrl ).build().execute( new StringCallback() {
 			@Override
@@ -571,7 +575,7 @@ public class Remote extends BaseFragment {
 				}
 				if (response != null) {
 					CacheUtils.putString( mContext, temcurUrl, response );
-					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis(  );
+					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis();
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
@@ -593,7 +597,7 @@ public class Remote extends BaseFragment {
 			}
 		} );
 		//温度设定值
-		String temsetUrl =  PARAMSRADIUS +"temperatureSet";
+		String temsetUrl = PARAMSRADIUS + "atemperatureSet";
 		OkHttpUtils.post().url( temsetUrl ).build().execute( new StringCallback() {
 			@Override
 			public void onError(Call call, Exception e, int id) {
@@ -617,7 +621,7 @@ public class Remote extends BaseFragment {
 				}
 				if (response != null) {
 					CacheUtils.putString( mContext, temsetUrl, response );
-					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis(  );
+					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis();
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
@@ -638,7 +642,7 @@ public class Remote extends BaseFragment {
 				}
 			}
 		} );
-		String humidityUrl =  PARAMSRADIUS +"humidity";
+		String humidityUrl = PARAMSRADIUS + "ahumidity";
 		OkHttpUtils.post().url( humidityUrl ).build().execute( new StringCallback() {
 			@Override
 			public void onError(Call call, Exception e, int id) {
@@ -662,7 +666,7 @@ public class Remote extends BaseFragment {
 				}
 				if (response != null) {
 					CacheUtils.putString( mContext, humidityUrl, response );
-					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis(  );
+					RemoteParamsRedis remoteParamsRedis = new RemoteParamsRedis();
 					try {
 						JSONObject jsonObject = new JSONObject( response );
 						String msg = jsonObject.optString( "msg" );
@@ -673,8 +677,8 @@ public class Remote extends BaseFragment {
 						remoteParamsRedis.setData( data );
 						remoteParamsRedis.setMsg( msg );
 
-						mShiduRatio.setCurrentProgress( remoteParamsRedis.getData());
-//						mShiduRatio.setCurrentProgress( 0.5f);
+						mShiduRatio.setCurrentProgress( remoteParamsRedis.getData() );
+						//						mShiduRatio.setCurrentProgress( 0.5f);
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}
@@ -686,13 +690,8 @@ public class Remote extends BaseFragment {
 		} );
 
 
-
 		return rootView;
 	}
-
-
-
-
 
 
 	@SuppressLint("HandlerLeak")
@@ -783,6 +782,7 @@ public class Remote extends BaseFragment {
 
 	@Override
 	public void onDestroyView() {
+		Log.e( TAG, "如果fragment即将被结束或保存，那么撤销方向上的下一个回调将是此方法" );
 		super.onDestroyView();
 		unbinder.unbind();
 	}
@@ -946,8 +946,22 @@ public class Remote extends BaseFragment {
 	private class MyOnErrorListener implements MediaPlayer.OnErrorListener {
 		@Override
 		public boolean onError(MediaPlayer mp, int what, int extra) {
-			Toast.makeText( mContext, "播放出错了", Toast.LENGTH_SHORT ).show();
+			Toast.makeText( mContext, "播放出错了!", Toast.LENGTH_SHORT ).show();
 			return false;
 		}
 	}
+
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach( context );
+		Log.e( TAG, "onAttach在fragment与activity关联时调用" );
+	}
+
+	@Override
+	public void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate( savedInstanceState );
+		Log.e( TAG, "onCreate" + "*********fragment初次创建时调用此时调用Activity的资源是不行的必须要在Acivity当中的onCreate获取" );
+	}
+
+
 }

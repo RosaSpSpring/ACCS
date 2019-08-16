@@ -487,7 +487,7 @@ public class LiveActivity extends Activity {
 				showToast("视频解析出错" );
 			} else {
 				AlertDialog.Builder build = new AlertDialog.Builder( LiveActivity.this );
-				build.setTitle( "播放错误" ).setMessage( "错误码：" + code ).setPositiveButton( "确定", null ).setCancelable( false ).show();
+				build.setTitle( "播放错误" ).setMessage( "错误码" + code ).setPositiveButton( "确定", null ).setCancelable( false ).show();
 			}
 
 		}
